@@ -1,0 +1,27 @@
+{
+  "name": "create-vk-bot",
+  "version": "1.0.0",
+  "bin": {
+    "create-vk-bot": "index.js"
+  },
+  "description": "A CLI to automatically clone the vk-bot-starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xzeldon/create-vk-bot.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Timofey (xzeldon)",
+    "email": "contact@zeldon.ru",
+    "url": "https://zeldon.ru"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "type": "module",
+  "license": "MIT"
+}
