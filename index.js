@@ -2,6 +2,8 @@
 
 import { spawn } from 'child_process';
 
+const is_win = process.platform === "win32" ? true : false;
+
 const name = process.argv[2];
 if (!name || name.match(/[<>:"\/\\|?*\x00-\x1F]/))
 {
@@ -20,7 +22,7 @@ await run_command('rm', ['-rf', `${name}/.git`]);
 
 console.log('Installing dependencies...');
 
-await run_command('npm', ['install'], {
+await run_command(is_win ? 'npm.cmd' : 'npm', ['install'], {
     cwd: process.cwd() + '/' + name
 });
 
