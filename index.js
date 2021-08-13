@@ -18,7 +18,15 @@ if (!name || name.match(/[<>:"\/\\|?*\x00-\x1F]/))
 const repo_url = 'https://github.com/xzeldon/vk-bot-starter.git';
 
 await run_command('git', ['clone', repo_url, name]);
-await run_command('rm', ['-rf', `${name}/.git`]);
+
+if (is_win)
+{
+    await run_command('cmd.exe', ['/c', 'rmdir', '/q', '/s', `"./${name}/.git/"`], { shell: true });
+} else
+{
+    await run_command('rm', ['-rf', `${name}/.git`]);
+}
+
 
 console.log('Installing dependencies...');
 
